@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolher Tema</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-900 text-white min-h-screen flex items-center justify-center">
+
+    <div class="bg-slate-800 p-10 rounded-xl text-center shadow-xl">
+        <h1 class="text-3xl font-bold mb-6">Escolha um tema</h1>
+
+        <div class="flex gap-4 justify-center">
+
+            <button onclick="temaClaro()" class="bg-white text-black px-6 py-3 rounded-lg hover:scale-105 transition">
+                ☀️ Claro
+            </button>
+
+            <button onclick="temaEscuro()"
+                class="bg-black text-white px-6 py-3 rounded-lg border border-white hover:scale-105 transition">
+                🌙 Escuro
+            </button>
+
+        </div>
+
+        <p class="mt-6 text-slate-400">
+            O tema será aplicado no site inteiro.
+        </p>
+    </div>
+
+    <script>
+
+        function temaClaro() {
+            localStorage.setItem("tema", "claro");
+            window.location.href = "/";
+        }
+
+        function temaEscuro() {
+            localStorage.setItem("tema", "escuro");
+            window.location.href = "/";
+        }
+
+    </script>
+
+</body>
+
+</html>

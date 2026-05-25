@@ -8,8 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 min-h-screen text-slate-100">
-
+<body id="body" class="min-h-screen transition-all duration-500">
     <header class="container mx-auto px-6 py-12">
         <nav class="flex items-center justify-between">
             <div class="flex items-center gap-2">
@@ -17,6 +16,8 @@
                 <span class="font-mono text-sm text-slate-300">demo-django</span>
             </div>
             <a href="/admin/" class="text-sm text-slate-300 hover:text-white transition">/admin</a>
+            <a href="/sobre/" class="text-sm text-slate-300 hover:text-white transition">/sobre</a>
+            <a href="/tema/" class="text-sm text-slate-300 hover:text-white transition">/tema</a>
         </nav>
     </header>
 
@@ -98,6 +99,35 @@
     <footer class="container mx-auto px-6 py-12 text-center text-slate-500 text-sm">
         Feito para a aula de Programação Web · Django 5.1
     </footer>
+
+    <script>
+
+        const body = document.getElementById("body");
+
+        const tema = localStorage.getItem("tema");
+
+        if (tema === "claro") {
+
+            body.classList.add(
+                "bg-gradient-to-br",
+                "from-slate-100",
+                "via-white",
+                "to-slate-200",
+                "text-slate-900"
+            );
+
+        } else {
+
+            body.classList.add(
+                "bg-gradient-to-br",
+                "from-slate-900",
+                "via-indigo-900",
+                "to-slate-900",
+                "text-slate-100"
+            );
+        }
+
+    </script>
 
 </body>
 
