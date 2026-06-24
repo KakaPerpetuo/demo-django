@@ -9,6 +9,14 @@ class Categoria(models.Model):
     def __str__(self):
         return self.nome
 
+class Tag(models.Model):
+    nome = models.SlugField(max_length=30, unique=True)
+
+    class Meta:
+        ordering = ["nome"]
+    
+    def __str__(self):
+        return self.nome
 
 class Mensagem(models.Model):
     titulo = models.CharField(max_length=120)
@@ -20,9 +28,13 @@ class Mensagem(models.Model):
         null=True,
         blank=True,
         related_name = "mensagens",
+    )
+    tags = models.ManyToManyField(
+        Tag,
+        blank=True,
+        related_name = "mensagens",
     ) 
     criada_em = models.DateTimeField(auto_now_add=True)
-    tag = models.CharField(max_length=80, default="Geral") 
 
     class Meta:
         ordering = ["-criada_em"]
