@@ -121,3 +121,7 @@ demo-django/
   <img src="docs/images/Screenshot%20from%202026-06-17%2016-02-32.png" width="48%" style="margin-bottom: 10px; border-radius: 8px;" />
   <img src="docs/images/Screenshot%20from%202026-06-17%2016-02-36.png" width="48%" style="margin-bottom: 10px; border-radius: 8px;" />
 </div>
+
+## Página com as tags
+
+![tags](docs/images/image.png)
